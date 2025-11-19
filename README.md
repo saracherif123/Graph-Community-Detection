@@ -64,7 +64,7 @@ pip install -r requirements.txt
 ## Key Findings
 
 ### Wikipedia Voting Network
-- **Louvain:** 29 communities, modularity 0.4243, conductance 0.0697
+- **Louvain:** 30 communities, modularity 0.4230, conductance 0.0890
 - **Walktrap:** 2,365 communities, modularity 0.3748, conductance 0.9862
 - Louvain finds larger, more cohesive communities; Walktrap identifies fine-grained micro-communities
 
