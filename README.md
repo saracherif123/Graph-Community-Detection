@@ -10,15 +10,21 @@ This project performs community detection and evaluation on two real-world netwo
 
 ### Wikipedia Voting Network
 - **Source:** [SNAP - Wiki-Vote](https://snap.stanford.edu/data/wiki-Vote.html)
+- **Download Link:** [Wiki-Vote.txt](https://snap.stanford.edu/data/wiki-Vote.txt.gz)
+- **Local Path:** `wikepedia_vote_dataset/Wiki-Vote.txt`
 - **Nodes:** 7,115 users
 - **Edges:** 103,689 votes (directed)
 - **Description:** Represents votes cast by users on others in Wikipedia administrator elections
+- **Format:** Each line contains two node IDs (FromNodeId ToNodeId), representing a directed edge
 
 ### Facebook Social Circles
 - **Source:** [SNAP - ego-Facebook](https://snap.stanford.edu/data/ego-Facebook.html)
+- **Download Link:** [ego-Facebook](https://snap.stanford.edu/data/ego-Facebook.txt.gz)
+- **Local Path:** `facebook_dataset/facebook_combined.txt`
 - **Nodes:** 4,039 users
 - **Edges:** 88,234 friendships (undirected)
 - **Description:** Represents friendship connections in a Facebook social network
+- **Format:** Each line contains two node IDs (NodeId1 NodeId2), representing an undirected edge
 
 ## Installation
 
@@ -76,9 +82,69 @@ pip install -r requirements.txt
 - Network density: 1.0820% with 1,612,010 triangles
 - Louvain finds fewer but larger, highly cohesive communities with excellent modularity; Walktrap identifies more fine-grained communities
 
-## Usage
+## How to Use the Data
 
-Open and run the Jupyter notebook `Saad_Gomes.ipynb` to execute the complete analysis. The notebook is organized into sections for each dataset, including analysis, community detection, and evaluation.
+### Step 1: Download the Datasets
+
+If the datasets are not already in the project directory, download them from the SNAP website:
+
+1. **Wikipedia Voting Network:**
+   ```bash
+   wget https://snap.stanford.edu/data/wiki-Vote.txt.gz
+   gunzip wiki-Vote.txt.gz
+   mkdir -p wikepedia_vote_dataset
+   mv wiki-Vote.txt wikepedia_vote_dataset/
+   ```
+
+2. **Facebook Social Circles:**
+   ```bash
+   wget https://snap.stanford.edu/data/ego-Facebook.txt.gz
+   gunzip ego-Facebook.txt.gz
+   mkdir -p facebook_dataset
+   # Note: The notebook expects a combined format. If using the original SNAP data,
+   # you may need to preprocess it to match the expected format.
+   ```
+
+### Step 2: Verify Data Location
+
+Ensure the data files are in the correct locations:
+- `wikepedia_vote_dataset/Wiki-Vote.txt` - Wikipedia voting network
+- `facebook_dataset/facebook_combined.txt` - Facebook social network
+
+### Step 3: Run the Notebook
+
+1. **Activate the virtual environment:**
+   ```bash
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+2. **Start Jupyter Notebook:**
+   ```bash
+   jupyter notebook
+   ```
+
+3. **Open and run `Saad_Gomes.ipynb`:**
+   - The notebook is organized into sections for each dataset
+   - All result cells are open and visible
+   - Run cells sequentially from top to bottom
+   - The notebook includes:
+     - Graph loading and preprocessing
+     - Graph statistics and visualization
+     - Centrality measures
+     - Community detection (Louvain and Walktrap)
+     - Community evaluation metrics
+     - Advanced analysis (Facebook dataset)
+
+### Step 4: View Results
+
+All analysis results are displayed in the notebook cells:
+- Graph visualizations
+- Statistical summaries
+- Community detection results
+- Evaluation metrics
+- Comparison tables
+
+**Note:** The notebook uses random seeds (42) for reproducibility. Running the cells will produce consistent results.
 
 
 
