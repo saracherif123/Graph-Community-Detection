@@ -21,9 +21,10 @@ Sources: [SNAP Wiki-Vote](https://snap.stanford.edu/data/wiki-Vote.html), [SNAP 
 
 | Notebook | Dataset(s) | Contents |
 |----------|------------|----------|
-| **Saad_Gomes.ipynb** | Wiki-Vote, Facebook | Graph stats, centrality (betweenness, closeness, eigenvector, PageRank), Louvain & Walktrap, modularity/conductance/cut-ratio |
+| **Saad_Gomes_First_Deliver.ipynb** | Wiki-Vote, Facebook | Graph stats, centrality (betweenness, closeness, eigenvector, PageRank), Louvain & Walktrap, modularity/conductance/cut-ratio |
+| **Saad_Gomes_Final_Deliver.ipynb** | Wiki-Vote, Facebook | Final deliver file merging notebooks |
 | **GNNs.ipynb** | Facebook | Node2Vec, DeepWalk, GCN, GraphSAGE, GAT, link prediction, t-SNE visualization |
-| **wiki_vote_embeddings_gnn.ipynb** | Wiki-Vote | Shallow embeddings, GNNs, link prediction |
+| **wiki_vote_embeddings_gnn.ipynb** | Wiki-Vote | Shallow embeddings, GNNs for node classification |
 
 ---
 
@@ -42,7 +43,8 @@ Requires Python 3.10–3.12 (gensim incompatible with 3.13).
 ## Project Structure
 
 ```
-├── Saad_Gomes.ipynb              # Community detection
+├── Saad_Gomes_First_Deliver.ipynb              # Community detection
+├── Saad_Gomes_Final_Deliver.ipynb              # Presentation
 ├── wiki_vote_embeddings_gnn.ipynb
 ├── GNNs.ipynb
 ├── wikepedia_vote_dataset/
